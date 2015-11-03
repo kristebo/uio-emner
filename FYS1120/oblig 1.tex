@@ -1,0 +1,344 @@
+\documentclass[11pt,a4paper, leqno]{report}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[norsk]{babel}
+
+
+\newcommand{\ihat}{\boldsymbol{\hat{\textbf{i}}}}
+\newcommand{\jhat}{\boldsymbol{\hat{\textbf{j}}}}
+\newcommand{\khat}{\boldsymbol{\hat{\textbf{k}}}}
+\newcommand{\vect}[1]{\mathbf #1}
+\newcommand{\partd}[1]{\frac {\partial} {\partial #1}}
+\newcommand{\partdd}[2]{\frac {\partial #1} {\partial #2}}
+\newcommand{\lapl}[2]{\frac {\partial^2 #1} {\partial #2}}
+
+
+\title{{\large FYS1120 - Elektromagnetisme} \\Oblig 1 Høsten 2015}
+\author{Krister Borge}
+
+
+\begin{document}
+
+	\maketitle
+
+\newpage
+
+\section{oppgave 1}{1.}
+\textbf{a)}
+\begin{enumerate}[(i)]
+	\item 
+		$$ f(x, y, z)=x^{2}y$$
+		$$\nabla f(x, y, z)=\partd x\ihat +\partd y \jhat+\partd z \khat $$
+		$$=2xy\ihat + x^{2} \jhat + 0\khat$$
+	\item 
+		$$ g(x, y, z)=xyz$$
+		$$\nabla f(x, y, z)=(yz, xz, xy)$$
+	\item 
+		$$ h(r, \theta, \phi)=\frac{1}{r} e^{r^{2}}$$
+
+Jeg bort i fra både $\theta$ og $\phi$ siden denne funksjonen kun beskriver avstanden av fra origo.
+Derfor kan jeg derivere med hensyn på $r$ for funksjonen
+		$$ h(z, \theta, \phi)=\frac{1}{r} e^{r^{2}}$$
+		$$=\left( \frac{e^{r^2} (2r^2-1)}{r^2} 0,0 \right)$$
+Der $r=\sqrt{x^2 + y^2 + z^2}$
+
+Bruker kartetiske koordinater og enhetsvektoren for å finne denne gradienten.
+
+$$\nabla h(x, y, z)=\frac{e^{x^2 + y^2 + z^2} x(-1+2x^2 2y^2 + 2z^2)}{x^2 + y^2 + z^2} \textbf{e}_{x}$$
+$$+ \frac{e^{x^2 + y^2 + z^2} y(-1+2x^2 2y^2 + 2z^2)}{x^2 + y^2 + z^2} \textbf{e}_{y}$$
+$$+ \frac{e^{x^2 + y^2 + z^2} z(-1+2x^2 2y^2 + 2z^2)}{x^2 + y^2 + z^2} \textbf{e}_{z}$$
+
+\end{enumerate}
+\newpage
+\textbf{b)}
+
+\begin{enumerate}[(i)]
+	\item
+			$$\mathbf{u}(x,y,z)=(2xy, x^2, 0)$$
+			$$\mathsf{div}\mathbf{u}(x,y,z)=\nabla \cdot \mathbf{u}=\partd x (2xy) +\partd y x^2+\partd z  0 =2y$$\\
+det var divergensen, her kommer virvlinga:
+		$$\mathsf{curl}(\mathbf{u}(x,y,z))=\nabla \times \mathbf{u}$$
+		$$\mathsf{curl}(\mathbf{u}(x,y,z))= 
+		\left( \begin{array}{ccc}
+			\ihat &  \jhat &  \khat \\
+			\partd x & \partd y & \partd z \\
+			2zy & x^2 & 0 
+		\end{array} \right)$$
+			$$=0+0+2x\khat-2x\khat-0-0=0$$
+	\item 
+		$$\mathbf{v}(x,y,z)=(e^{yz}, ln(xy),z)$$
+		$$\mathsf{div}(\mathbf{v}(x,y,z))=\nabla\cdot\mathbf{v}=\partd x(e^{yz}) +\partd y (ln(xy))+\partd z (z) = \frac{1}{y} +1$$
+		$$\mathsf{curl}(\mathbf{v}(x,y,z))= \nabla \times \mathbf{v} =
+		\left( \begin{array}{ccc}
+			\ihat &  \jhat &  \khat \\
+			\partd x & \partd y & \partd z \\
+			e^{yz} & ln(xy) & z 
+		\end{array} \right)$$
+			$$=0+0+0-\partd y e^{yz} \khat-0-0=-ze^{zy}\khat$$
+	\item
+		$$ \mathbf{w}(x,y,z)=(yz, xz, xy)$$
+		$$\mathsf{div}(\mathbf{w}(x,y,z))=\nabla\cdot\mathbf{w}=\partd x (yz) +\partd y (xz)+\partd z (xy) =0$$
+		$$\mathsf{curl}(\mathbf{w}(x,y,z))= \nabla \times \mathbf{w} =
+		\left( \begin{array}{ccc}
+			\ihat &  \jhat &  \khat \\
+			\partd x & \partd y & \partd z \\
+			yz & xz & xy 
+		\end{array} \right)$$
+			$$=x\ihat+y \jhat+ z \khat -x \ihat - y \jhat - z\khat=0$$
+	\item
+		$$\mathbf{a}(x,y,z)=(y^2z,-z^2 \mathsf{sin}(y) + 2xyz, 2z\mathsf{cos}(y)+y^2x)$$
+		$$\mathsf{div}(\mathbf{a}(x,y,z))=\nabla\cdot\mathbf{a}=\partd x (y^2z) +\partd y (-z^2\mathsf{sin}(y) + 2xyz)+\partd z (2z\mathsf{cos}(y)+y^2x) =0$$
+		$$=0+z\mathsf{cos}(y)+2xz+2\mathsf{cos}(y)+y^2$$
+		$$\mathsf{curl}(\mathbf{a}(x,y,z))= \nabla \times \mathbf{a} =
+		\left( \begin{array}{ccc}
+			\ihat &  \jhat &  \khat \\
+			\partd x & \partd y & \partd z \\
+			y^2z & -z^2 \mathsf{sin}(y) + 2xyz & 2z\mathsf{cos}(y)+y^2x 
+		\end{array} \right)$$
+		$$=\partd y (2z\mathsf{cos}(y)+y^2x) \ihat+  \partd z (y^2z) \jhat+ \partd x (-z^2 \mathsf{sin}(y) + 2xyz) \khat$$
+ 		$$- \partd z (-z^2 \mathsf{sin}(y) + 2xyz)  \ihat - \partd x (2z\mathsf{cos}(y)+y^2x) \jhat - \partd y y^2z \khat$$
+		$$=(2z\mathsf{cos}(y)+y)\ihat+ y^2 \jhat + 2yz \khat - (-2z \mathsf{sin}(y)+ 2xy)\ihat  -y^2 \jhat-2yz \khat$$
+		$$=(-2z\mathsf{cos}(y)+y)\ihat- (-2z \mathsf{sin}(y)+ 2xy)\ihat=(-2z\mathsf{cos}(y)+2z \mathsf{sin}(y)+y-2xy)\ihat$$
+\end{enumerate}
+\newpage
+\textbf{c)}\\
+
+Matematisk sett er et felt konservativt når det oppfyller baneuavhengig. Det kan også ses ved at virvlinga er lik 0-vektoren.
+Anta et vektorfelt  $\mathbf{F}$ som er koblet til et skalarfelt $\phi$ ved $\mathbf{F}=\nabla \phi$, hvor $\nabla \phi$ eksisterer \\
+i et område D. Da er $\mathbf{F}$ konservativt inne i D. På samme måte kan $\mathbf{F}$ skrives som gradienten til et skalarfelt $\mathbf{F}=\nabla \phi$
+\\(Mathews, P. C. Vector Calculus, 7. utgave 2005)\\
+Fra fysikken kan man tenke seg gravitasjonsfeltet som et konservativt felt. Ordet i seg selv betyr bevarende (konserverende).
+ Siden man kan se på et gradienten til et potensial (skalarfelt) vil mekanisk energi være bevart. \\
+Et objekt i et slikt felt er altså uavhengig av banen. Det er kun avhengig av start- og stoppunkt.  \\
+
+
+Skalarfeltene i 1a $f(x,y,z)$ og $h(x,y,z) $og  har gradientene som tilsvarer vektorfeltene \textbf{u} og \textbf{w}. Nå har jeg et vektorfelt som er koblet med et skalarfelt:
+$$\mathbf{u}=\nabla f(x,y,z)$$
+og \\
+$$\mathbf{w}=\nabla h(x,y,z)$$\\
+
+Definisjonen til curl gjør at vi er avgrenset av et område C og siden vi da har curl =0 i begge vektorfelt kan jeg slutte at disse feltene er konservative.\\
+
+
+ \textbf{d)}\\
+
+Vi ser her på laplaceoperatoren til
+
+\begin{enumerate}[(i)]
+	\item
+		$$ j(x, y, z)=x^2 + xy + yz^2$$
+				$$\nabla^{2} j=\sum\limits_{j=1}^{n}\lapl j x_i=\left (\lapl j x \right) +\left(\lapl j y \right) +\left(\lapl j z \right)$$
+		$$=\left (\partd x (2x+y) \partd y (x+z) + \partd z (2zy) \right )=2 $$
+	\item
+		$$ k(r, \theta, \phi)=\frac{1}{r} e^{r^{2}} $$
+\newpage
+i kulekoordinater blir dette:
+$$k(r, \theta, \phi)=\lapl f r \left(\frac{e^{r^2}(2r^2+1)}{r^2}\right)$$
+$$=\frac{2e^{r^2}(2r^4-r^2+1)}{r^3}$$
+
+\end{enumerate}
+\section{\textbf{oppgave 2}}
+	$$\mathbf{a} \times (\mathbf{b} \times \mathbf{c})=\mathbf{b}(\mathbf{a} \cdot \mathbf{c}) - \mathbf{c}(\mathbf{a}  \cdot \mathbf{b})$$
+Der vektorene er på formen $\mathbf{a}= (a_1,a_2, a_3)$\\
+	$$\mathbf{a} \times (\mathbf{b} \times \mathbf{c})=(a_1,a_2, a_3) \times \left( (b_1,b_2, b_3) \times (c_1,c_2, c_3)\right)$$
+
+	$$\left( \begin{array}{ccc}
+			\ihat &  \jhat &  \khat \\
+			b_1  &  b_2  &  b_3 \\
+			c_1  &  c_2  &  c_3
+	\end{array} \right)$$
+	$$=\ihat b_2 c_3 + \jhat b_3 c_1 + \khat b_1 c_2 -\ihat b_3 c_2 -\jhat b_1 c_3 - \khat  b_1 c_2$$
+	$$=\ihat(b_2 c_3-b_1 c_3) +\jhat(b_3 c_1-b_1 c_3)+\khat( b_1 c_2- b_2 c_1)$$
+	$$\left( \begin{array}{ccc}
+			\ihat &  \jhat &  \khat \\
+			a_1  &  a_2  &  a_3 \\
+			b_2 c_3-b_1 c_3  &  b_3 c_1-b_1 c_3 &  b_1 c_2- b_2 c_1
+	\end{array} \right)$$
+	$$=\ihat a_2 (b_1 c_2-b_1 c_3) +  \jhat a_3 (b_2 c_3-b_1 c_3) + \khat a_1 (b_3 c_1-b_1 c_3)$$
+	$$-\ihat a_3 (b_3 c_1-b_1 c_3) - \jhat a_1( b_1 c_2- b_1 c_2)-\khat  a_2 (b_2 c_3-b_1 c_3 )$$
+	$$=\ihat (a_2 (b_1 c_2-b_2 c_1) -a_3 (b_3 c_1-b_1 c_3))$$
+	$$+\jhat (a_3 (b_2 c_3-b_1 c_3)-a_1( b_1 c_2- b_1 c_2))$$
+	$$+\khat (a_1 (b_3 c_1-b_1 c_3)-a_2 (b_2 c_3-b_1 c_3))=\ihat (a_2 b_2 c_1 - a_2 b_1 c_2 - a_3 b_3 c_1 + a_3 b_1 c_3)$$
+	$$+\jhat (a_3 b_2 c_3 - a_3 b_1 c_3 - a_1 b_1 c_2 + a_1 b_1 c_2) + \khat (a_1 b_3 c_1 - a_1 b_1 c_3 - a_2 b_2 c_3 + a_2 b_1 c_3)$$
+\newpage
+
+Tar for meg høyre siden nå:
+	$$=\mathbf{b}(\mathbf{a}\cdot\mathbf{c})-\mathbf{c}(\mathbf{a}\cdot\mathbf{b})=$$
+	$$	\left(\begin{array}{c}
+			b_1\\
+			b_2\\
+			b_3
+		\end{array}\right)
+		\left(\left(\begin{array}{c}
+			a_1\\
+			a_2\\
+			a_3
+		\end{array}\right)\cdot
+		\left(\begin{array}{c}
+			c_1\\
+			c_2\\
+			c_3
+		\end{array}\right)\right)
+			-
+		\left(\begin{array}{c}
+			c_1\\
+			c_2\\
+			c_3
+		\end{array}\right)
+		\left(\left(\begin{array}{c}
+			a_1\\
+			a_2\\
+			a_3
+		\end{array}\right)\cdot
+		\left(\begin{array}{c}
+			b_1\\
+			b_2\\
+			b_3
+		\end{array}\right)\right)	$$
+
+	$$	=\left(\begin{array}{c}
+			b_1\\
+			b_2\\
+			b_3
+		\end{array}\right) (a_1 c_1+a_2 c_2 +a_3 c_3)-
+\left(\begin{array}{c}
+			c_1\\
+			c_2\\
+			c_3
+		\end{array}\right)(a_1 b_1+a_2 b_2 +a_3 b_3)$$
+$$	=\left(\begin{array}{c}
+			b_1 \cdot (a_1 c_1+a_2 c_2 +a_3 c_3)\\
+			b_2 \cdot (a_1 c_1+a_2 c_2 +a_3 c_3)\\
+			b_3 \cdot (a_1 c_1+a_2 c_2 +a_3 c_3)
+		\end{array}\right) -
+\left(\begin{array}{c}
+			c_1 \cdot (a_1 b_1+a_2 b_2 +a_3 b_3)\\
+			c_2 \cdot (a_1 b_1+a_2 b_2 +a_3 b_3)\\
+			c_3 \cdot (a_1 b_1+a_2 b_2 +a_3 b_3)
+		\end{array}\right)$$
+$$	=\left(\begin{array}{c}
+			b_1 \cdot (a_1 c_1+a_2 c_2 +a_3 c_3)-c_1 \cdot (a_1 b_1+a_2 b_2 +a_3 b_3)\\
+			b_2 \cdot (a_1 c_1+a_2 c_2 +a_3 c_3)-c_2 \cdot (a_1 b_1+a_2 b_2 +a_3 b_3)\\
+			b_3 \cdot (a_1 c_1+a_2 c_2 +a_3 c_3)-c_3 \cdot (a_1 b_1+a_2 b_2 +a_3 b_3)
+		\end{array}\right)$$
+$$	=\left(\begin{array}{c}
+			b_1 a_2 c_2 + b_1 a_3 c_3 - c_1 a_2 b_2 - c_1 a_3 b_3\\
+			b_2 a_1 c_1 + b_2 a_3 c_3 - c_2 a_1 b_1 - c_2 a_3 b_3\\
+			b_3 a_1 c_1 + b_3 a_2 c_2 - c_3 a_1 b_1 - c_3 a_2 b_2
+		\end{array}\right)=\mathbf{a} \times (\mathbf{b} \times \mathbf{c})$$
+
+\section{\textbf{oppgave 3: Fluksintegral og Gauss' teorem}}
+
+	\textbf{a)}
+
+	$$ \mathbf{f}(\mathbf{x})=(y, x,z-x)$$
+	Enhetskuben er gitt ved $ (x, y, z)\in [0,1]$\\
+	Finner divergensen til $f(\mathbf{x})$
+	$$\mathsf{div} f(\mathbf{x})=(0+ 0 +1)=1$$
+	
+	Regner så ut flulksen for hver av de seks sidene til kuben:
+	$$\iint\limits_A=\mathbf{v}\cdot\mathbf{n}dA=$$
+	$$\iiint\limits_0^1\partdd P x +\partdd Q y +\partdd R y dxdydz$$
+
+	Jeg tar for meg hver side av enhetskuben:
+	For siden der$x=0$ blir $y \in [0,1]$ og $z\in [0,1]$. og  $\mathbf{n}=-\ihat$
+	$$\mathbf{v} \cdot \mathbf{n}=-y$$
+	Fluxen blir
+	$$\iint\limits_{A_{\ihat}}-y=\int\limits_0^1\int\limits_0^1 -y dydz=-\frac{1}{2}$$
+ 
+	For siden der$x=1$ blir $y \in [0,1]$ og $z\in [0,1]$. og  $\mathbf{n}=\ihat$
+	$$\mathbf{v} \cdot \mathbf{n}=y$$
+	Fluxen blir
+	$$\iint\limits_{A_{\ihat}}-y=\int\limits_0^1\int\limits_0^1 y dydz=\frac{1}{2}$$
+
+	For siden der$x \in [0,1]$,  $y=0$ og $z\in [0,1]$. og  $\mathbf{n}=-\jhat$	
+	$$\mathbf{v} \cdot \mathbf{n}=-x$$
+	Fluxen blir
+	$$\iint\limits_{A_{\jhat}}-y=\int\limits_0^1\int\limits_0^1 y dxdz=-\frac{1}{2}$$
+
+	For siden der$x \in [0,1]$,  $y=1$ og $z\in [0,1]$. og  $\mathbf{n}=\jhat$
+	$$\mathbf{v} \cdot \mathbf{n}=x$$
+	Fluxen blir
+	$$\iint\limits_{A_{\jhat}}-y=\int\limits_0^1\int\limits_0^1 y dxdz=\frac{1}{2}$$
+
+	For siden der$x \in [0,1]$,  $y \in [0,1]$og $z=0$. og  $\mathbf{n}=-\khat$	
+	$$\mathbf{v} \cdot \mathbf{n}=-(z-x)=z+x$$
+	Fluxen blir
+	$$\iint\limits_{A_{\khat}}-y=\int\limits_0^1\int\limits_0^1 z+x dxdz=1$$
+
+	For siden der$x \in [0,1]$,  $y \in [0,1]$og $z=1$. og  $\mathbf{n}=\khat$
+	$$\mathbf{v} \cdot \mathbf{n}=-(z-x)=z-x$$
+	Fluxen blir
+	$$\iint\limits_{A_{\khat}}-y=\int\limits_0^1\int\limits_0^1 z-x dxdz=0$$
+
+	Fluks ut av enhetskuben blir da
+	$$\iint\limits_A \mathbf{v} \cdot \mathbf{n} =-\frac{1}{2}+\frac{1}{2}+\left(-\frac{1}{2}\right)+\frac{1}{2}+0+1=1$$
+	
+	Gauss' teorem:
+
+	$$\iiint\limits_A \nabla \cdot \mathbf{v}dA=\iiint\limits_0^1\partdd P x +\partdd Q y +\partdd R y dxdydz=\iiint\limits_0^1 0 + 0 +1dxdydz=[1]_0^1=1$$
+	\newpage
+\section{Oppgave 4: Linjeintegral og Stokes' teorem}
+	$$\mathbf{w}(x,y,z)=2x-y, -y^2, -y^2z$$
+	
+	\textbf{a)}
+
+	Regner ut divergensen til $\mathbf{w}$:
+	$$\mathsf{div}(\mathbf{w}(x,y,z)=\nabla\cdot\mathbf{w}=\partd x (2x-y) +\partd y (-y^2) + \partd z (-y^2z)$$
+	$$=2 -2y-y^2$$
+
+\textbf{b)}
+
+	Regner ut curl til $\mathbf{w}$:
+	$$\mathsf{curl}(\mathbf{w}(x,y,z)=\nabla\times\mathbf{w}$$
+
+		$$=\left( \begin{array}{ccc}
+			\ihat &  \jhat &  \khat \\
+			\partd x & \partd y & \partd z \\
+			2x-y & -y^2 & -y^2z 
+		\end{array} \right)$$
+		$$=\ihat(\partd y (-y^2z)-\partd z(-y^2))+\jhat(\partd z (2x-y)- \partd x (-y^2z)) +\khat ( \partd x (-y^2) - \partd y (2x-y))$$
+		$$=\ihat(-2yz)+ 0\jhat +\khat(1)=(2xy,0,1)$$
+
+\textbf{c)}
+
+	$\gamma$ er gitt ved $x^2-y^2=1$,$z=1$ Dette er en sirkel i $xy$-planet
+	En parametrisering av $\gamma$ er gitt ved 
+	$$\gamma(t)=(cos(t), sin(t),1) 		 t \in [0,2\pi]$$
+
+\textbf{d)}
+
+	Finner sirkulasjonen C, til $\mathbf{w}$ rundt $\gamma$.
+	$\mathbf{w}(x,y,z)$ 
+	$$\int\limits_C\mathbf{w}d\mathbf{s} = \int\limits_0^{2\pi}\mathbf{w}(\gamma(t)) \cdot {\gamma(t)}'dt$$
+	$$\int\limits_0^{2\pi}\mathbf{w}(2\sin{t}-\cos{t},-\cos^2{t},-\cos^2{t})\cdot(\cos{t},-\sin{t},0)dt$$
+	$$=\int\limits_0^{2\pi}(\cos{t}(2\sin{t}-\cos{t}) + (-\cos^2{t})(-\sin{t})dt$$
+	$$=2\int\limits_0^{2\pi}\cos{t}\sin{t}dt-\int\limits_0^{2\pi}\cos^2{t}dt+\int\limits_0^{2\pi}\cos^2{t}\sin{t}dt$$
+	$$=2\int\limits_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\sin{u}(-\cos{u})du-\int\limits_0^{2\pi}\cos^2{t}dt+\int\limits_0^{2\pi}\cos^2{t}\sin{t}dt$$
+Siden $\int\limits_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\sin{u}(-\cos{u})du=0$
+	$$=\int\limits_0^{2\pi}\cos^2{t}dt-\int\limits_0^{2\pi}\cos^2{t}\sin{t}dt$$
+	$$=\int\limits_0^{2\pi}\frac{1}{2}\cos{2t}-\frac{1}{2} dt+\int\limits_0^{2\pi}\cos^2{t}\sin{t}dt$$
+skriver om
+	$$=\frac{1}{2}\int\limits_0^{2\pi}\cos{2t}dt+\frac{1}{2} \int\limits_0^{2\pi} 1 dt-\int\limits_0^{2\pi}\cos^2{t}\sin{t}dt$$
+	$$=\frac{1}{4}\int\limits_0^{4\pi}\cos{s}ds+\frac{1}{2} \int\limits_0^{2\pi} 1 dt-\int\limits_0^{2\pi}\cos^2{t}\sin{t}dt$$
+	$$=\frac{\sin{s}}{4}\Bigg|_0^{4\pi}+\frac{1}{2} \int\limits_0^{2\pi} 1 dt-\int\limits_0^{2\pi}\cos^2{t}\sin{t}dt$$
+	$$=\frac{1}{2} \int\limits_0^{2\pi} 1 dt-\int\limits_0^{2\pi}\cos^2{t}\sin{t}dt$$
+	$$=\frac{t}{2}\Bigg|_0^{2\pi} -\int\limits_0^{2\pi}\cos^2{t}\sin{t}dt$$
+ 	$$=\pi-\int\limits_0^{2\pi}\cos^2{t}\sin{t}dt$$
+som gir
+$$\int\limits_C\mathbf{w}d\mathbf{s} = \int\limits_0^{2\pi}\mathbf{w}(\gamma(t)) \cdot {\gamma(t)}'dt=\pi$$
+\newpage
+
+
+
+\textbf{e)}
+Regner ut curl til $\mathbf{w}$ er $(2xy,0,1)$ \\
+Stokes teorem er 
+ $$\int\limits_C\mathbf{w}d\mathbf{r} =\iint\limits_S \mathsf{curl}\mathbf{w}\cdot d\mathbf{S}$$
+	$$\iint\limits_S \mathsf{curl}\mathbf{w}\cdot d\mathbf{S}=\iint\limits_S (2xy,0,1)\cdot (z_x,z_y,1) d\mathbf{S}=\iint\limits_S (2xy,0,1)\cdot (0,0,1) d\mathbf{S}$$ 
+Siden $\mathbf{w}$ ligger på $z=1$.
+$$\iint\limits_S (2xy,0,1)\cdot (0,0,1) d\mathbf{S}=1*\pi=\pi$$
+og dette stemmer med oppgave \textbf{d)}
+
+\end{document}

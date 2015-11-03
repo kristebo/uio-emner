@@ -1,0 +1,6 @@
+function []=lab1oppgave2(datapunkt)
+y=polyval(
+polyfit(
+
+
+end
