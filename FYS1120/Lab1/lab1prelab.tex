@@ -6,6 +6,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{tikz}
 
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \author{Krister Borge}
@@ -27,8 +28,6 @@ Jeg veit at $\tau=$RC. jeg veit også halveringstiden til kondensatoren som er 2
 \begin{equation}
 V(t)=V_0e^{-t/R_{internal}C}
 \end{equation}
-
-
 
 Hvis jeg setter spenningen til 12V blir utrykket:
 \begin{equation}
@@ -54,7 +53,6 @@ Der $V_0$ er den initielle spenningen i kondensatoren.
 Jeg har også at $Q_{max}=CV_{max}$
 $F=\frac{Q}{V}$ 
 \pagebreak
-
 
 \textbf{Oppgave 2:} 
 
@@ -94,7 +92,7 @@ gir dette plottet:
 
 \textbf{Oppgave 3:} 
 
- Finn et uttrykk for $B$ dersom vi dreier spolen med konstant vinkelhastighet $\omega$ og måler den maksimale verdien $\epsilon_0$ for $\epsilon(t)$. Hva er forholdet mellom 
+ Finn et uttrykk for $\mathbf{B}$ dersom vi dreier spolen med konstant vinkelhastighet $\omega$ og måler den maksimale verdien $\epsilon_0$ for $\epsilon(t)$. Hva er forholdet mellom 
 $\omega$ og $t_0-t_1$?
 
 
@@ -122,9 +120,23 @@ Et utrykk for B kan da være:
 \begin{equation}
 B=\frac{\Phi(t_1)}{2N \pi r^2}-\frac{\Phi(t_1)}{2N \pi r^2}=\frac{\Phi(t_2)-\Phi(t_1)}{2N \pi r^2}
 \end{equation}
+Der $\Phi(T)$ kan utrykkes ved
+\begin{equation}
+-\int_{t1}^{t2}\epsilon(t)dt
+\end{equation}
+
+Amperes lov sier:
+\begin{equation}
+\oint \mathbf{B} ds=\mu_0I
+\end{equation}
+$\mu_0$ er permitiviteten.
+
+Forholdet $\omega/t_1-t_2$:
+\begin{equation}
+\omega=\frac{2 \pi} {T}
+\end{equation}
 
 
-Jeg er veldig usikker på om dette er løsninga. -> det gir ikke noe hint om hva $\omega/t_1-t_2$ forholdet er...
 
-
+$t_2-t_1$ er området frem til 
 \end{document}
