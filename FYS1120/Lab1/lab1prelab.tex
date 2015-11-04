@@ -29,31 +29,28 @@ Jeg veit at $\tau=$RC. jeg veit også halveringstiden til kondensatoren som er 2
 V(t)=V_0e^{-t/R_{internal}C}
 \end{equation}
 
-Hvis jeg setter spenningen til 12V blir utrykket:
+For RC-kretser gjelder:
 \begin{equation}
-V(20)=6=12*e^{-20/R_{internal}10^{-6}}
+\tau=RC
+\end{equation}
+men jeg har kondensator verdien og løser for R:
+\begin{equation}
+\ln(2)=\frac{t}{RC}
 \end{equation}
 \begin{equation}
-ln(0.5)=ln(e^{-20/R_{internal}10^{-6})}
+\ln(2)=\frac{20}{RC}
 \end{equation}
 \begin{equation}
-ln(0.5)=\frac{-20}{R_{internal}10^{-6}}
+\ln(2)=\frac{20}{R1 \mu F}
 \end{equation}
 \begin{equation}
-ln(0.5)=\frac{-20000000}{R_{internal}}
-\end{equation}
-\begin{equation}
-ln(0.5)*R_{internal}=-20000000
-\end{equation}
-\begin{equation}
-R_{internal}=\frac{-20000000}{-0,6931471806}=2.88*10^7=28.8M\Omega
+\ln(2)R=\frac{\frac{20}{10^{-6} F}}{\ln{2}}=\frac{20000000}{\ln(2)}=28853900,816=28,853900816\mathsf{M}\Omega
 \end{equation}
 
 Der $V_0$ er den initielle spenningen i kondensatoren.
 Jeg har også at $Q_{max}=CV_{max}$
 $F=\frac{Q}{V}$ 
 \pagebreak
-
 \textbf{Oppgave 2:} 
 
 Lag et MATLAB-skript basert på metodene polyfit og polyval som tilpasser en linje til et sett med datapunkter x,y og viser punktene og den tilpassede linjen på en figur. Dette skriptet kan også brukes i labøvelse 3(Hall-effekt).
@@ -89,12 +86,10 @@ gir dette plottet:
 \includegraphics[width=\textwidth]{curvefittertest.jpg}
 \end{figure}
 
-
 \textbf{Oppgave 3:} 
 
- Finn et uttrykk for $\mathbf{B}$ dersom vi dreier spolen med konstant vinkelhastighet $\omega$ og måler den maksimale verdien $\epsilon_0$ for $\epsilon(t)$. Hva er forholdet mellom 
+Finn et uttrykk for $\mathbf{B}$ dersom vi dreier spolen med konstant vinkelhastighet $\omega$ og måler den maksimale verdien $\epsilon_0$ for $\epsilon(t)$. Hva er forholdet mellom 
 $\omega$ og $t_0-t_1$?
-
 
 Der spolens $N$ er spolens vindingstall og $A$ er spolens areal.
 orientasjonen er slik at $\Phi(t_1)=NAB$ og 
@@ -137,6 +132,6 @@ Forholdet $\omega/t_1-t_2$:
 \end{equation}
 
 
-
-$t_2-t_1$ er området frem til 
+$t_2-t_1$ er området frem til $\cos(\pi)$:\\
+Jeg skjønner det ikke!.	
 \end{document}
