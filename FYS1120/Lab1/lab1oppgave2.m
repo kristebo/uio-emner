@@ -9,7 +9,11 @@ y1 = polyval(p,x1);
 %plot
 figure
 plot(x,y,'or',x1,y1,'b')
-title('Values and fitted curve')
+title('Spenning mot tid')
+xlabel('tid (s)')
+ylabel('U (V)')
 legend('recorded values', 'fitted curve')
+
+
 
 end

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.17)  4 NOV 2015 21:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.17)  6 NOV 2015 16:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -799,46 +799,100 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<RC-cirquit.jpg, id=12, 801.99625pt x 487.8225pt>
+<gjennomforing/oppgave11/oppgave11LOGUvT.jpg, id=12, 561.09625pt x 420.57124pt>
+File: gjennomforing/oppgave11/oppgave11LOGUvT.jpg Graphic file (type jpg)
+<use gjennomforing/oppgave11/oppgave11LOGUvT.jpg>
+Package pdftex.def Info: gjennomforing/oppgave11/oppgave11LOGUvT.jpg used on in
+put line 26.
+(pdftex.def)             Requested size: 483.69687pt x 362.55699pt.
+
+Overfull \hbox (5.42159pt too wide) in paragraph at lines 20--27
+\OT1/cmr/m/n/12 Vi s^^Wa at kon-den-sa-to-ren falt til halv spen-ning p^^Wa un-
+der et mi-nutt, derofr ^^\kte vi an-tall m^^Walepunkter
+ []
+
+<gjennomforing/oppgave11/oppgave11UvT.jpg, id=13, 561.09625pt x 420.57124pt>
+File: gjennomforing/oppgave11/oppgave11UvT.jpg Graphic file (type jpg)
+
+<use gjennomforing/oppgave11/oppgave11UvT.jpg>
+Package pdftex.def Info: gjennomforing/oppgave11/oppgave11UvT.jpg used on input
+ line 32.
+(pdftex.def)             Requested size: 483.69687pt x 362.55699pt.
+ [1 <./gjennomforing/oppgave11/oppgave11LOGUvT.jpg>] [2 <./gjennomforing/oppgav
+e11/oppgave11UvT.jpg>]
+<RC-cirquit.jpg, id=24, 801.99625pt x 487.8225pt>
 File: RC-cirquit.jpg Graphic file (type jpg)
  <use RC-cirquit.jpg>
-Package pdftex.def Info: RC-cirquit.jpg used on input line 25.
+Package pdftex.def Info: RC-cirquit.jpg used on input line 87.
 (pdftex.def)             Requested size: 483.69687pt x 294.22168pt.
- [1 <./RC-cirquit.jpg>] <curvefittertest.jpg, id=27, 560.0925pt x 420.57124pt>
+ [3 <./RC-cirquit.jpg>] [4]
+<gjennomforing/oppgave21/fransislab1oppgave21.jpg, id=39, 562.1pt x 421.575pt>
+File: gjennomforing/oppgave21/fransislab1oppgave21.jpg Graphic file (type jpg)
+
+<use gjennomforing/oppgave21/fransislab1oppgave21.jpg>
+Package pdftex.def Info: gjennomforing/oppgave21/fransislab1oppgave21.jpg used 
+on input line 130.
+(pdftex.def)             Requested size: 483.69687pt x 362.77257pt.
+
+<curvefittertest.jpg, id=40, 560.0925pt x 420.57124pt>
 File: curvefittertest.jpg Graphic file (type jpg)
 
 <use curvefittertest.jpg>
-Package pdftex.def Info: curvefittertest.jpg used on input line 86.
+Package pdftex.def Info: curvefittertest.jpg used on input line 166.
 (pdftex.def)             Requested size: 483.69687pt x 363.2244pt.
- [2] [3 <./curvefittertest.jpg>] [4] (./lab1prelab.aux) ) 
+ [5 <./gjennomforing/oppgave21/fransislab1oppgave21.jpg>] [6 <./curvefittertest
+.jpg>]
+<gjennomforing/oppgave31/lab1oppgave31.jpg, id=48, 561.09625pt x 420.57124pt>
+File: gjennomforing/oppgave31/lab1oppgave31.jpg Graphic file (type jpg)
+
+<use gjennomforing/oppgave31/lab1oppgave31.jpg>
+Package pdftex.def Info: gjennomforing/oppgave31/lab1oppgave31.jpg used on inpu
+t line 178.
+(pdftex.def)             Requested size: 483.69687pt x 362.55699pt.
+
+<gjennomforing/oppgave4.jpg, id=49, 348.30125pt x 205.76875pt>
+File: gjennomforing/oppgave4.jpg Graphic file (type jpg)
+
+<use gjennomforing/oppgave4.jpg>
+Package pdftex.def Info: gjennomforing/oppgave4.jpg used on input line 192.
+(pdftex.def)             Requested size: 348.3004pt x 205.76823pt.
+ [7 <./gjennomforing/oppgave31/lab1oppgave31.jpg>] [8 <./gjennomforing/oppgave4
+.jpg>]
+<gjennomforing/oppgave5.jpg, id=58, 272.01625pt x 173.64874pt>
+File: gjennomforing/oppgave5.jpg Graphic file (type jpg)
+
+<use gjennomforing/oppgave5.jpg>
+Package pdftex.def Info: gjennomforing/oppgave5.jpg used on input line 244.
+(pdftex.def)             Requested size: 272.01558pt x 173.64832pt.
+ [9 <./gjennomforing/oppgave5.jpg>]
+(./lab1prelab.aux) ) 
 Here is how much of TeX's memory you used:
- 13377 strings out of 493089
- 256377 string characters out of 6134842
- 304569 words of memory out of 5000000
- 16580 multiletter control sequences out of 15000+600000
+ 13411 strings out of 493089
+ 257573 string characters out of 6134842
+ 305595 words of memory out of 5000000
+ 16604 multiletter control sequences out of 15000+600000
  13487 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,7n,54p,391b,239s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2015/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmtt12.pfb>
-Output written on lab1prelab.pdf (5 pages, 198384 bytes).
+ 55i,7n,54p,391b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on lab1prelab.pdf (10 pages, 302966 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 110 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

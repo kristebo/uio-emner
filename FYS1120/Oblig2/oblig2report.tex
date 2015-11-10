@@ -18,202 +18,41 @@
 \begin{document}
 \maketitle
 
-%\newpage
-
-%\newpage
-\chapter*{Oppgave 1 test}
-\section*{Oppgave 1: Partikkel i elektrisk felt: Programkode og verifisering}
-I denne oppgaven har jeg brukt matlab til å plotte numerisk ved hjelp av Euler-Cromers metode for å fine hastihet og posisjon til en partikkel i et elektrisk felt. Det elektriske feltet \textbf{E}$=(-5$NC$^{-1},0,0)$ og initialverdiene r(t$=0$)$=(0,0,0)$ og v(t$=0$)$=(0,0,0)$. 
-Jeg ser på intervallet $t_0=0$ til $t_1=1 \mu s$ 
-
-$\Delta t=1n s $ og $\Delta t= 100n s$
-
-\begin{verbatim}
-function [  ] = oblig2oppgave1( dt )
-
-E = [-5,0,0]; 
-r0 = [0,0,0]; 
-v0 = [0,0,0]; 
-m_e = 9.11e-31; 
-e = -1.6e-19; 
-
-t0 = 0; 
-t1 = 1*10e-6; 
-% F og aksellerasjon 
-F = e.*E; 
-a = F./m_e; 
-% initalverdier
-r = r0;
-v = v0; 
-%t = linspace(t0,t1,(t1/dt)+1); 
-ra = r0;
-% Euler-Cromer method 
-n = t1/dt
- t=0;
- c=0;
-for i=2:n 
-    v(i,:) = v(i-1,:) + a.*dt; 
-    r(i,:) = r(i-1,:) + v(i,:).*dt; 
-    c=c+dt;
-    t(i,:)=c;
-    %analytic
-    ra(i,:) = 0.5.*(a.*c^2);
-end 
-
-
-%plotene 
-%%
-
-plot(t(:,1),r(:,1),'g',t(:,1), ra(:,1), 'r') 
-axis('auto');
-legend('Numerisk løsning', 'analytisk løsning'); title(['Oppgave 1 dt=', num2str(dt), 'ps']) 
-xlabel('t'); ylabel('r') 
-% hver komponent:
- %%
-E=[-1, -2, 5];
-F = e.*E; 
-a = F./m_e; 
-% initalverdier
-r = r0;
-v = v0; 
-%t = linspace(t0,t1,(t1/dt)+1); 
-ra = r0;
-% Euler-Cromer method 
-n = t1/dt; 
-t=0;
-c=0;
- for i=2:n 
-    v(i,:) = v(i-1,:) + a.*dt; 
-    r(i,:) = r(i-1,:) + v(i,:).*dt; 
-    c=c+dt;
-    t(i,:)=c;
- end
-
-%plot
-figure()
-plot(t(:,1),r(:,1),'g', t(:,1), r(:,2), 'r', t(:,1), r(:,3), 'b')
-legend('x_t', 'y_t', 'z_t')
-xlabel('t'); ylabel('r') 
-title('hver komponent tid posisjon')
-figure()
-plot3(r(:,1), r(:,2),r(:,3))
-title('path'); grid();
-xlabel('x_t'); ylabel('y_t'); zlabel('z_t')
-
-
-
-end
-
-\end{verbatim}
-
-\begin{figure}[H]
-\caption{Analytisk og numerisk løsning $\Delta t=1ns$}
-\centering
-\includegraphics[width=\textwidth]{oppgave1analyticnumeric.jpg}
-\end{figure}
-\begin{figure}[H]
-\caption{Analytisk og numerisk løsning $\Delta t=100ns$}
-\centering
-\includegraphics[width=\textwidth]{oppgave1analyticnumericdt2.jpg}
-\end{figure}
-\begin{figure}[H]
-\caption{r$_x$ r$_y$ og r$_z$}
-\centering
-\includegraphics[width=\textwidth]{oppgave1component.jpg}
-\end{figure}
-\begin{figure}[H]
-\caption{Banen i 3d}
-\centering
-\includegraphics[width=\textwidth]{oppgave1path3d.jpg}
-\end{figure}
-
-
-
 \newpage
 \chapter*{Oppgave 2}
 \section*{Oppgave 2: Partikkel i magnetisk felt}
-I denne oppgaven bruker jeg de den samme partikkelen som i oppgave 1. Euler-Cromers metode for å finne posisjon og fart.
-\begin{verbatim}
-%oppgave 2:
-m_e = 9.11e-31; 
-e = -1.6e-19; 
-r0=[0 0 0];
-v0=[10 0 0];
-B=[0 0 5];
-t0=0;
-t1=1*10e-12;
-dt=10e-15; %30fs
-r=r0;
-v=v0;
-n=t1/dt;
-t=t0;
-c=0;
 
-%F=e*(cross(v,B)
+I denne oppgaven bruker jeg de den samme partikkelen som i oppgave 1. Euler-Cromers metode for å finne posisjon og fart. Vi bytter ut den det elektriske feltet med et magnetfelt \textbf{B} 
+\begin{equation}
+\mathbf{F}_B=q(\mathbf{v}\times\mathbf{B})
+\end{equation}
 
-for i=2:n
-    F = e*(cross(v(i-1,:),B));
-    a = F./m_e; 
-    v(i,:) = v(i-1,:) + a.*dt;
-    r(i,:) = r(i-1,:) + v(i-1,:).*dt; 
-    c=c+dt;
-    t(i,:)=c;
-end
-oblig2oppgave2b(r,dt);
-figure() 
-plot(t(:,1),r(:,1),t(:,1),r(:,2),t(:,1),r(:,3))  
-legend('r_x(t)','r_y(t)','r_z(t)'); title('Oppgave 2a tid posisjon') 
-xlabel('tid'); ylabel('posisjon') 
-
-figure() 
-plot(t(:,1),v(:,1),t(:,1),v(:,2),t(:,1),v(:,3)) 
-legend('v_x(t)','v_y(t)','v_z(t)'); title('Oppgave 2a tid hastighet ') 
-xlabel('tid'); ylabel('hastighet') 
-
-figure() 
-plot3(r(:,1),r(:,2),r(:,3)) 
-legend('path'); title('Oppgave 2a Path i 3d'); grid() 
-xlabel('r_x'); ylabel('r_y'); zlabel('r_z')
-
-clear all
-
-\end{verbatim}
 \subsection*{Oppgave 2 a)}
+
+Vi bruker samme partikkel. Vi setter $\mathbf{r}(t=0)=(0, 0, 0)$ og $\mathbf{v}(t=0)=(10 km s^{-1}, 0, 0 )$. $\mathbf{B}=(0,0,2T)$
+Når vi ser på bevegelsen fra t=0 får jeg disse plottene:
+
 \begin{figure}[H]
 \caption{Posisjon}
 \centering
 \includegraphics[width=\textwidth]{oppgave2rt.jpg}
 \end{figure}
+
 \begin{figure}[H]
 \caption{Fart}
 \centering
 \includegraphics[width=\textwidth]{oppgave2vt.jpg}
 \end{figure}
+
 \begin{figure}[H]
 \caption{3d}
 \centering
 \includegraphics[width=\textwidth]{oppgave23d.jpg}
 \end{figure}
-\subsection*{Oppgave 2 b)}
-Måler omløpstiden T:
-\begin{verbatim}
-function [  ] = oblig2oppgave2b( r, dt )
-%oblig2oppgave2b 
-%   oppgave 2b regner ut omløpstiden T:
 
-T=0;
-for j=1:n
-    if (-dt< r(j,1)> dt)
-        r(j);
-        T=j;
-    end    
-end
-T=T*2*dt;
-format=('Omløpstiden %s \n');
-fprintf(format,T)
-% Omløpstiden 1.790000e-11 
-end
-\end{verbatim}
+\subsection*{Oppgave 2 b)}
+Måler omløpstiden T ved å bevege meg langs r. Da blir omløpstiden $1.79\cdot10^{-11}$
+
 \subsection*{Oppgave 2 c)}
  Vis analytisk at syklotronfrekvensen til dette systemet er
  $$
@@ -236,43 +75,7 @@ T=\frac{2\pi m}{qB}
 $$
 
 \subsection*{Oppgave 2 d)}
-\begin{verbatim}
-%oppgave 2d
 
-
-m_e = 9.11e-31; 
-e = -1.6e-19; 
-r0=[0 0 0];
-
-v0=[5 0 2];
-
-B=[0 0 5];
-t0=0;
-t1=1*10e-12;
-dt=10e-15; %30fs
-r=r0;
-v=v0;
-n=t1/dt;
-t=t0;
-c=0;
-for i=2:n
-    F = e*(cross(v(i-1,:),B));
-    a = F./m_e; 
-    v(i,:) = v(i-1,:) + a.*dt;
-    r(i,:) = r(i-1,:) + v(i-1,:).*dt; 
-    c=c+dt;
-    t(i,:)=c;
-end
-figure() 
-plot(t(:,1),v(:,1),t(:,1),v(:,2),t(:,1),v(:,3)) 
-legend('v_x(t)','v_y(t)','v_z(t)'); title('Oppgave 2d tid hastighet ') 
-xlabel('tid'); ylabel('hastighet') 
-
-figure() 
-plot3(r(:,1),r(:,2),r(:,3)) 
-legend('path'); title('Oppgave 2d Path i 3d'); grid() 
-xlabel('r_x'); ylabel('r_y'); zlabel('r_z')
-\end{verbatim}
 
 \begin{figure}[H]
 \caption{Oppgave 2d - Fart}
@@ -294,98 +97,19 @@ I denne oppgaven ser vi på en partikkels bane i magnetfelt og elektrisk felt.
 
 $$E = \begin{cases} E_0cos(\omega t) \hat{\mathbf{e}}_x, & \mbox{hvis } x \in (d/2, -d/2) \\ (0, 0, 0) & \mbox{ellers}\end{cases}$$
 
-Systemet ser på banen partikllen i feltet.
+Systemet ser på banen partiklen i feltet. Jeg skal se på bevegelsen til et partikkel i en syklotron med parametere satt tilsvarende den i kjellern på fys.
  
-\begin{verbatim}
-% variabler
-m_p = 1.67*10e-27;
-e = 1.6*10e-19;
-v0 = [0,0,0];
-r0 = [0,0,0];
-B = [0,0,2]; %B=(0,0,2T)
-dt = 1e-10;
-t0 = 0;
-t1 = 3e-6;
-t=t0:dt:t1;
-r = r0;
-v = v0;
-E0 = [90/25 0 0 ];
-E=E0;
-Bs=sqrt(B(:,1)^2 + B(:,2)^2 +B(:,3)^2) ; 
-omega = (e*Bs)/m_p;
-for i=2:length(t)
-    
-    F_B = e.*(cross(v(i-1,:),B));
-    F_E = E.*e;
-    F = F_E+F_B;
-    a = F./m_p;
-    v(i,:) = v(i-1,:) + a.*dt;
-    r(i,:) = r(i-1,:) + v(i-1,:).*dt;
-    if (r(i-1,1) <= 0.1 && r(i-1,1) >= -0.1)
-        E = E0.*cos(omega*t(i).*[1 0 0]);
-        
-    else
-        E = [0,0,0];
-    end
-end
-figure()
-plot(r(:,1), r(:,2))
-legend('bane'); title('Oppgave 3a')
-xlabel('x_t'); ylabel('y_t')
 
-\end{verbatim}
 \begin{figure}[H]
 \caption{Oppgave 3a -$x_t$ mot $y_t$}
 \centering
 \includegraphics[width=\textwidth]{oppgave3a.jpg}
 \end{figure}
 
-Avstanden øker med hver runde. (FINN UT HVORFOR OG SKRIV HER!!)
+Grunnen til at avstanden øker hver runde er at for hver runde i syklotronen vil kraften fra magnetfeltet synke mens akselerasjonen øker. Dette sees tydeligere når man plotter hver x, y og z for seg.
 \subsection*{Oppgave 3 b}
-\begin{verbatim}
+Jeg skal implementere at jeg slipper ut et proton ved $r_d$ =50mm. Dette gjør jeg ved å sette grensene for når partiklen er i sirkulasjon i D'ene. 
 
-m_p = 1.67*10e-27;
-e = 1.6*10e-19;
-v0 = [0,0,0];
-r0 = [0,0,0];
-B = [0,0,2]; %B=(0,0,2T)
-dt = 100e-12;
-t0 = 0;
-t1 = 300e-9;
-t=t0:dt:t1;
-r = r0;
-v = v0;
-E0 = [90/25 0 0 ];
-E=E0;
-Bs=sqrt(B(:,1)^2 + B(:,2)^2 +B(:,3)^2); 
-omega = (e*Bs)/m_p;
-r_d = 5e-2;
-for i=2:length(t)
-    
-    F_B = e.*(cross(v(i-1,:),B));
-    F_E = E.*e;
-    F = F_E+F_B;
-    a = F./m_p;
-    v(i,:) = v(i-1,:) + a.*dt;
-    r(i,:) = r(i-1,:) + v(i-1,:).*dt;
-    if (r(i-1,1) <= r_d && r(i-1,1) >= -r_d)
-        E = E0.*cos(omega*t(i).*[1 0 0]);
-    else
-        E = [0,0,0];
-    end
-end
-figure()
-plot(t,r(:,1), t,r(:,2), t, r(:, 3))
-legend('x_t','y_t','z_t')
-title('Oppgave 3b - position')
-xlabel('time s'); ylabel('position')
-figure()
-plot(t,v(:,1), t,v(:,2), t, v(:, 3))
-legend('v_x','v_y','v_z' )
-title('Oppgave 3b - velocity')
-xlabel('time s'); ylabel('velocity')
-
-\end{verbatim}
 \begin{figure}[H]
 \caption{Posisjon}
 \centering
@@ -397,12 +121,10 @@ xlabel('time s'); ylabel('velocity')
 \centering
 \includegraphics[width=\textwidth]{oppgave3bv.jpg}
 \end{figure}
+
 \subsection*{Oppgave 3 c)}
-utvider programmet med
-\begin{verbatim}
-fart=sqrt(v(length(v)-1,1)^2+ v(length(v)-1,2)^2+v(length(v)-1,3)^2)
-\end{verbatim}
-Farten er da: 69.4221
+
+Farten er da: $3.5604\cdot 10^9$
 \newpage
 \subsection*{Oppgave 3 d)}
 Jeg kan vise at den kinetiske enerigen er
@@ -416,18 +138,12 @@ $$
 E_k=\frac{1}{2} m (\frac{qBr}{m})^2=\frac{1}{2} \frac{q^2B^2r^2}{m}
 $$
 
-finner løsningen for $E_k$ i MeV med et bittelite matlabskript
-\begin{verbatim}
-m_p = 1.67*10e-27;
-q = 1.6*10e-19;
-r = 0.5;
-B=2;
-E_k=0.5*((q^2*B^2*r^2)/(m_p))
-E_kmev=E_k*6241509341896.7
-%E_k = 7.6647e-11 joule
-%E_kmev = 478.3911 MeV
-\end{verbatim}
-Den kinetiske energien er $E_k = 7.6647*10^{-11}$ Joule $=478.3911$ MeV.
+Jeg regner ut den kinetiske energien i matlab, 
+Den kinetiske energien er $E_k = 7.6647 \cdot 10^{-11}$ Joule som tilsvarer 478.3911 MeV.
+
+Hvis jeg ser på massen til protonet (938.272046MeV/c$^2$) og regner ut hvileenergien $E=(938.272046MeV/c^2)*c^2=938.272046MeV$
+Sammenlikner jeg hvileenergien til protonet og dens kinetiske energi har jeg at den $E_k$ er 50\% av hvileenergien til protonet.
+
 
 \chapter*{Oppgave 4 - RC-krets} 
 \subsection*{Oppgave 4a)}
@@ -460,9 +176,6 @@ Q(t)=Q_{max}e^{-\frac{t}{\tau}}
 $$
 \subsection*{Oppgave 4c}
 Strømmen i kretsen er nådd halv parten av $I_max$ ved $0.69 \tau$ siden $e^-0.69\approx 0.5$
-
-\subsection*{Oppgave 4c)}
-Strømmen vil ha falt til halvparten av $Q_{max}$ etter 
 
 \subsection*{Oppgave 4d)}
 \begin{figure}[H]
@@ -500,13 +213,100 @@ $$
 I=\frac{dQ}{dt}=\frac{\epsilon}{R} e^{-t/\tau}=I_0e^{-t/\tau}
 $$
 \chapter*{MatLab}
-\includepdfmerge{oblig2oppgave1.pdf}
-\includepdfmerge{oblig2oppgave2.pdf}
-\includepdfmerge{oblig2oppgave2b.pdf}
-\includepdfmerge{oblig2oppgave2d.pdf}
-\includepdfmerge{oblig2oppgave3a.pdf}
-\includepdfmerge{oblig2oppgave3b.pdf}
-\includepdfmerge{oblig2oppgave3d.pdf}
+\section{oppgave 3}
+\begin{verbatim}
+
+% variabler
+m_p = 1.67*10e-27;
+e = 1.6*10e-19;
+v0 = [0,0,0];
+r0 = [0,0,0];
+B = [0,0,2]; %B=(0,0,2T)
+dt = 1e-10;
+t0 = 0;
+t1 = 3e-6;
+t=t0:dt:t1;
+r = r0;
+v = v0;
+E0 = [90e3/25e-6 0 0 ];
+E=E0;
+Bs=sqrt(B(:,1)^2 + B(:,2)^2 +B(:,3)^2) ; 
+omega = (e*Bs)/m_p;
+a=0;
+for i=2:length(t)
+    
+    F_B = e.*(cross(v(i-1,:),B));
+    F_E = E.*e;
+    F = F_E+F_B;
+    
+    v(i,:) = v(i-1,:) + a.*dt;
+    r(i,:) = r(i-1,:) + v(i-1,:).*dt;
+    if (r(i-1,1) <= 0.1 && r(i-1,1) >= -0.1)
+        E = E0.*cos(omega*t(i).*[1 0 0]);
+   
+    else
+        E = [0,0,0];
+    end
+    a = F./m_p;
+         
+end
+
+figure()
+plot(r(:,1), r(:,2))
+legend('bane'); title('Oppgave 3a')
+xlabel('x_t'); ylabel('y_t')
+
+
+\end{verbatim}
+\begin{verbatim}
+
+m_p = 1.67*10e-27;
+e = 1.6*10e-19;
+v0 = [0,0,0];
+r0 = [0,0,0];
+B = [0,0,2]; %B=(0,0,2T)
+dt = 100e-12;
+t0 = 0;
+t1 = 300e-9;
+t=t0:dt:t1;
+r = r0;
+v = v0;
+E0 = [90e3/25e-6 0 0 ];
+E=E0;
+Bs=sqrt(B(:,1)^2 + B(:,2)^2 +B(:,3)^2); 
+omega = (e*Bs)/m_p;
+r_d = 5e-2;
+a=0;
+for i=2:length(t)
+    
+    F_B = e.*(cross(v(i-1,:),B));
+    F_E = E.*e;
+    F = F_E+F_B;
+   
+    v(i,:) = v(i-1,:) + a.*dt;
+    r(i,:) = r(i-1,:) + v(i-1,:).*dt;
+    if (r(i-1,1) <= r_d && r(i-1,1) >= -r_d)
+        E = E0.*cos(omega*t(i).*[1 0 0]);
+    else
+        E = [0,0,0];
+    end
+    a = F./m_p;
+end
+
+figure()
+plot(t,r(:,1), t,r(:,2), t, r(:, 3))
+legend('x_t','y_t','z_t')
+title('Oppgave 3b - position')
+xlabel('time s'); ylabel('position')
+figure()
+plot(t,v(:,1), t,v(:,2), t, v(:, 3))
+legend('v_x','v_y','v_z' )
+title('Oppgave 3b - velocity')
+xlabel('time s'); ylabel('velocity')
+
+fart=sqrt(v(length(v)-1,1)^2+ v(length(v)-1,2)^2+v(length(v)-1,3)^2)
+ 
+\end{verbatim}
 
 \end{document}
 

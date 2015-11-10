@@ -11,17 +11,16 @@ t1 = 3e-6;
 t=t0:dt:t1;
 r = r0;
 v = v0;
-E0 = [90e3/25e-6 0 0 ];
+E0 = [90e3/25e-9 0 0 ];
 E=E0;
 Bs=sqrt(B(:,1)^2 + B(:,2)^2 +B(:,3)^2) ; 
 omega = (e*Bs)/m_p;
-a=0;
+a = F./m_p;
 for i=2:length(t)
     
     F_B = e.*(cross(v(i-1,:),B));
     F_E = E.*e;
     F = F_E+F_B;
-    
     v(i,:) = v(i-1,:) + a.*dt;
     r(i,:) = r(i-1,:) + v(i-1,:).*dt;
     if (r(i-1,1) <= 0.1 && r(i-1,1) >= -0.1)
@@ -30,7 +29,7 @@ for i=2:length(t)
     else
         E = [0,0,0];
     end
-    a = F./m_p;
+        a = F./m_p;
          
 end
 
