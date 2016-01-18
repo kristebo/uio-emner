@@ -1,0 +1,11 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {norsk}
+\beamer@sectionintoc {1}{Om meg}{4}{0}{1}
+\beamer@sectionintoc {2}{Hva er 3d-printing}{5}{0}{2}
+\beamer@sectionintoc {3}{Desktop vs industrielle teknologier}{6}{0}{3}
+\beamer@sectionintoc {4}{Historie frem til i dag}{7}{0}{4}
+\beamer@sectionintoc {5}{Fused Deposition modelling}{8}{0}{5}
+\beamer@sectionintoc {6}{Materialer}{9}{0}{6}
+\beamer@sectionintoc {7}{Modellering}{10}{0}{7}
+\beamer@sectionintoc {8}{G-Kode}{12}{0}{8}
+\beamer@sectionintoc {9}{Slicer}{13}{0}{9}

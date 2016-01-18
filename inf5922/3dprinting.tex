@@ -1,0 +1,112 @@
+\documentclass[12pt]{beamer}
+\usetheme{Szeged}
+\usepackage[utf8]{inputenc}
+\usepackage[norsk]{babel}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\author{Krister Borge}
+\title{3d printing}
+\setbeamercovered{transparent} 
+\setbeamertemplate{navigation symbols}{} 
+\logo{} 
+\institute{Institutt for informatikk} 
+\date{} 
+\subject{INF5922} 
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\large{Plan}\\
+\small{Nå 3d-printing\\
+Uke 41: modellering\\
+Uke 42: Laserkutter\\
+Uke 43: Arduino\\}
+\end{frame}
+\begin{frame}{TOC}
+\tableofcontents
+\end{frame}
+
+\begin{frame}{Om meg}
+\section{Om meg}
+	Krister Borge - 
+	Studerer: Elektronikk og datateknologi
+	ansatt på sonen, drift og engasjert i forskjellige prosjekter.
+	epost: kristebo@ulrik.uio.no
+\end{frame}
+
+\begin{frame}{Hva er 3d-printing}
+\section{Hva er 3d-printing}
+Hva er 3d-printing:
+\begin{enumerate}
+\item[•] En metode for å lage ting
+\item[•] En metode å overføre en modell fra en 3d-modell på en datamaskin til den virkelige verden.
+\item[•] Det finnes mange forskjellige former for 3d-printing
+\item[-] FDM, SLA, DLP, SLM, 3DP, SLS, LOM, $\mathsf{EBF^3}$ er noen
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Desktop vs Industrielle teknologier}
+\section{Desktop vs industrielle teknologier}
+Det er et skille mellom de store industrielle maskinene og de små vi ser i dag. skillet ligger i hvilken teknologi som brukes. Det er patent-reglene som bestemmer hvem som kan anvende de forskjellige.
+SLA (stereolithografi) og DLP (digital light processing) har lenge vært proprietere og beskyttet av patenter
+pulvermaskinene er fremdeles beskyttet av patenter (3dp (inkjet 3d printing), SLS (selective laser sintering) % vil være de første som kommer komerielt tilgjengelig
+LOM (lamineringsteknologi) samt $\mathsf{EBF^3}$ (Electron Beam Freeform Fabrication:vaier som sveises/smeltes sammen) er laget for større applikasjoner. 
+Vi bruker FDM (Fused deposition modelling)
+ 
+\end{frame}
+
+\begin{frame}{Historien frem til i dag}
+\section{Historie frem til i dag}
+\href{http://www.engineering.com/3DPrinting/3DPrintingArticles/ArticleID/6262/Infographic-The-History-of-3D-Printing.aspx}{Historien frem til i dag}
+\end{frame}
+
+\begin{frame}{Fused Deposition modelling}
+\section{Fused Deposition modelling}
+FDM er teknologien våre printere bruker:
+Disse printerene lager modeller ved bruk av: 
+\begin{enumerate}
+\item en varm dyse, kalles hot-end
+\item noe å bevege denne varme dysen i et plan (kartesiske koordinater)
+\item noe å dytte ut materialet med, kalles en ekstruder
+\item kontrollelektronikk og steppermotorer
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{materialer}
+\section{Materialer}
+PLA - Polylactic acid (er biologisk nedbrytbart og er laget av f. eks stivelse)\\
+HPFE - polyethylene,PE (brus flasker)\\
+ABS - Acrolonitril  butadiene Styren (LEGO)\\
+\end{frame}
+
+\begin{frame}{modellering}
+\section{Modellering}
+SketchUp \\
+Autodesk Inventor/360 \\
+Blender \\
+\end{frame}
+
+\begin{frame}{SketchUp}
+Et helt greit og enkelt modelleringsverktøy.
+\href{http://www.sketchup.com/download}{last ned SketchUp}
+\end{frame}
+
+\begin{frame}{G-kode}
+\section{G-Kode}
+G-kode er en industriell standard for CNC maskiner. \\
+her leser maskina en tekstfil som inneholder informasjon om hva 3d-printeren skal gjøre.
+\end{frame}
+
+\begin{frame}{Slicer}
+\section{Slicer}
+Sliceren gjør om 3d modellen til noe 3d-printeren forstår.
+Ultimakers cura - funker mot de aller fleste maskiner.
+\end{frame}
+
+
+
+\end{document}
